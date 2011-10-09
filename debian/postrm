@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+#DEBHELPER#
+
+rm -f /etc/dnsmasq.d/01-grasehotspot

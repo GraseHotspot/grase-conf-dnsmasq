@@ -1,0 +1,7 @@
+The Debian Package grase-conf-dnsmasq
+----------------------------
+
+This package gets network settings from the Grase Hotspot database and
+configures coova-chilli and dnsmasq based on those network settings
+
+ -- Tim White <tim@hotspot.purewhite.id.au>  Mon, 10 Oct 2011 08:12:59 +1000

@@ -1,0 +1,19 @@
+Source: grase-conf-dnsmasq
+Section: config
+Priority: extra
+Maintainer: Tim White <tim@hotspot.purewhite.id.au>
+Build-Depends-Indep: @cdbs@
+Standards-Version: 3.8.3
+Homepage: http://grasehotspot.org/
+
+Package: grase-conf-dnsmasq
+Architecture: all
+Depends: ${misc:Depends}, dnsmasq (>= 2.51)
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
+Description: Config files for Dnsmasq for the GRASE Hotspot System
+ The GRASE Hotspot System binds together CoovaChilli, Freeradius, MySQL, and 
+ other systems as well as providing an administrative frontend to managing 
+ users and other hotspot related tasks.
+ .
+ This package provides Configuration files for the DNS subsystem

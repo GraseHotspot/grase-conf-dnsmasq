@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+#set -u
+
+action="$1"
+
+if [ "$action" != configure ]
+  then
+  exit 0
+fi
+
+#DEBHELPER#
+
+sh /usr/share/grase/scripts/update_grase_networksettings.sh || true
