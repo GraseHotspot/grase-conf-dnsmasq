@@ -3,7 +3,7 @@
 # This file gets the network settings from the database and stores them in /etc/dnsmasq.d/
 # It also restarts dnsmasq and coovachilli if the settings have changed
 
-NS_TEMP=$(tempfile)
+NS_TEMP=$(tempfile -m 0644)
 NS_CONF=/etc/dnsmasq.d/01-grasehotspot
 
 # Following functions are taken from /etc/chilli/functions from the coova-chilli package
@@ -31,8 +31,8 @@ update_new_file() {
 checkfornew() {
     update_new_file $NS_TEMP $NS_CONF && {
         echo "New Grase Network Settings. Restart services";
-        /etc/init.d/chilli restart
-        /etc/init.d/dnsmasq restart
+        /etc/init.d/chilli restart || true
+        /etc/init.d/dnsmasq restart || true
     }
 }
 
@@ -40,5 +40,5 @@ checkfornew() {
 
 php /usr/share/grase/www/radmin/networksettings.dnsmasq.php > $NS_TEMP
 
-checkfornew
+checkfornew || true
 

@@ -1,9 +1,9 @@
-Source: grase-conf-dnasmq
+Source: grase-conf-dnsmasq
 Section: unknown
 Priority: extra
 Maintainer: unknown <tim@unknown>
 Build-Depends: debhelper (>= 7)
-Standards-Version: 3.8.3
+Standards-Version: 3.9.1
 Homepage: <insert the upstream URL, if relevant>
 
 Package: grase-conf-dnsmasq
