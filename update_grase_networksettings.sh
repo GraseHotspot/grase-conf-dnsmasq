@@ -30,10 +30,10 @@ update_new_file() {
 
 checkfornew() {
     update_new_file $NS_TEMP $NS_CONF && {
-        echo "New Grase Network Settings. Restart services";
+        echo "New GRASE Network Settings. Restart services";
         /etc/init.d/chilli stop || true
         /etc/init.d/dnsmasq stop || true
-        echo "Waiting for them to completly shutdown...";
+        echo "Waiting for them to completely shutdown...";
         sleep 2;
         /etc/init.d/chilli start || true
         /etc/init.d/dnsmasq start || true
@@ -46,4 +46,6 @@ checkfornew() {
 php /usr/share/grase/www/radmin/networksettings.dnsmasq.php > $NS_TEMP
 
 checkfornew || true
+
+rm -f $NS_TEMP
 
