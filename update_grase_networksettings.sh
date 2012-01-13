@@ -3,7 +3,7 @@
 # This file gets the network settings from the database and stores them in /etc/dnsmasq.d/
 # It also restarts dnsmasq and coovachilli if the settings have changed
 
-NS_TEMP=$(tempfile -m 0644)
+NS_TEMP=$(tempfile -p grasenet -m 0644)
 NS_CONF=/etc/dnsmasq.d/01-grasehotspot
 
 # Following functions are taken from /etc/chilli/functions from the coova-chilli package

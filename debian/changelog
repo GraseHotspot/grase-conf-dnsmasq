@@ -2,8 +2,9 @@ grase-conf-dnsmasq (1.2) purewhite; urgency=low
 
   * Remove temp file after changing settings
   * Depend on php5-cli
+  * Make the name more uniq to grase
 
- -- Tim White <tim@hotspot.purewhite.id.au>  Sat, 14 Jan 2012 07:18:45 +1000
+ -- Tim White <tim@hotspot.purewhite.id.au>  Sat, 14 Jan 2012 07:20:35 +1000
 
 grase-conf-dnsmasq (1.1) purewhite; urgency=low
 
