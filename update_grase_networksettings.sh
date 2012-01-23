@@ -41,11 +41,15 @@ checkfornew() {
     }
 }
 
+checkforerror() {
+    grep -q "#error_occured" $NS_TEMP && echo "Unable to get valid network settings. Not changing Grase network settings" && return 0
+}
+
 ###
 
 php /usr/share/grase/www/radmin/networksettings.dnsmasq.php > $NS_TEMP
 
-checkfornew || true
+checkforerror || checkfornew || true
 
 rm -f $NS_TEMP
 
