@@ -46,10 +46,10 @@ checkforerror() {
 }
 
 ###
+[ -e /usr/share/grase/www/radmin/networksettings.dnsmasq.php ] && {
+  php /usr/share/grase/www/radmin/networksettings.dnsmasq.php > $NS_TEMP
+  checkforerror || checkfornew || true
 
-php /usr/share/grase/www/radmin/networksettings.dnsmasq.php > $NS_TEMP
-
-checkforerror || checkfornew || true
-
-rm -f $NS_TEMP
-
+  rm -f $NS_TEMP
+  
+}

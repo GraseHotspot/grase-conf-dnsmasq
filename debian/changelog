@@ -1,3 +1,9 @@
+grase-conf-dnsmasq (1.5) purewhite; urgency=low
+
+  * Don't depend on grase-www-portal as this causes cylic deps, instead check for script and just don't run without it
+
+ -- Tim White <tim@hotspot.purewhite.id.au>  Mon, 30 Jan 2012 16:03:15 +1000
+
 grase-conf-dnsmasq (1.4) purewhite; urgency=low
 
   * Depend on grase-www-portal as network script is useless without

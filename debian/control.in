@@ -8,7 +8,7 @@ Homepage: http://grasehotspot.org/
 
 Package: grase-conf-dnsmasq
 Architecture: all
-Depends: ${misc:Depends}, dnsmasq (>= 2.51), php5-cli, grase-www-portal
+Depends: ${misc:Depends}, dnsmasq (>= 2.51), php5-cli
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}
 Description: Config files for Dnsmasq for the GRASE Hotspot System
