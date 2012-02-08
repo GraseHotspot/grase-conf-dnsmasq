@@ -3,6 +3,6 @@
 # m h   dom mon dow     command
 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-MAILTO=hotspot@hotspot.purewhite.id.au
+#MAILTO=hotspot@hotspot.purewhite.id.au
 ## NEEDS USERNAME
 */5 *   * * *   root    /usr/share/grase/scripts/update_grase_networksettings.sh

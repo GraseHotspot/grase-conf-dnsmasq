@@ -1,3 +1,9 @@
+grase-conf-dnsmasq (1.6) purewhite; urgency=low
+
+  * Security flaw fixed (bug #54) sending data to 3rd party
+
+ -- Tim White <tim@hotspot.purewhite.id.au>  Wed, 08 Feb 2012 22:45:07 +1000
+
 grase-conf-dnsmasq (1.5) purewhite; urgency=low
 
   * Don't depend on grase-www-portal as this causes cylic deps, instead check for script and just don't run without it
