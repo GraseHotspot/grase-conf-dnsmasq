@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+# TODO set -e...
 
 # This file gets the network settings from the database and stores them in /etc/dnsmasq.d/
 # It also restarts dnsmasq and coovachilli if the settings have changed
@@ -31,24 +33,25 @@ update_new_file() {
 checkfornew() {
     update_new_file $NS_TEMP $NS_CONF && {
         echo "New GRASE Network Settings. Restart services";
-        /etc/init.d/chilli stop || true
-        /etc/init.d/dnsmasq stop || true
+        /usr/sbin/invoke-rc.d chilli stop || true
+        /usr/sbin/invoke-rc.d dnsmasq stop || true
         echo "Waiting for them to completely shutdown...";
         sleep 2;
-        /etc/init.d/chilli start || true
-        /etc/init.d/dnsmasq start || true
+        /usr/sbin/invoke-rc.d chilli start || true
+        /usr/sbin/invoke-rc.d dnsmasq start || true
         
     }
 }
 
-checkforerror() {
-    grep -q "#error_occured" $NS_TEMP && echo "Unable to get valid network settings. Not changing Grase network settings" && return 0
-}
-
 ###
-[ -e /usr/share/grase/www/radmin/networksettings.dnsmasq.php ] && {
-  php /usr/share/grase/www/radmin/networksettings.dnsmasq.php > $NS_TEMP
-  checkforerror || checkfornew || true
+[ -e /usr/share/grase/symfony4/bin/console ] && {
+  if /usr/share/grase/symfony4/bin/console grase:dnsmasqNetworkSettingsConfig > $NS_TEMP
+  then
+    checkfornew || true
+  else
+    echo "Unable to get valid network settings. Not changing Grase network settings"
+    exit -1
+  fi
 
   rm -f $NS_TEMP
   
