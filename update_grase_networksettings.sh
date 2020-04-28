@@ -44,7 +44,7 @@ checkfornew() {
 }
 
 ###
-[ -e /usr/share/grase/symfony4/bin/console ] && {
+[ -e /usr/share/grase/symfony4/bin/console ] && [ -e /usr/share/grase/symfony4/.env ] && {
   if /usr/share/grase/symfony4/bin/console grase:dnsmasqNetworkSettingsConfig > $NS_TEMP
   then
     checkfornew || true
